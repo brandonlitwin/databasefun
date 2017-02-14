@@ -14,8 +14,8 @@ where aid in (select aid
               from orders
               where cid = (select cid 
              		   from customers
-              		   where city = 'Kyoto') kyoto_customers
-              ) agents
+              		   where city = 'Kyoto') 
+              ) 
 order by pid DESC;
 
 -- 3
@@ -39,7 +39,7 @@ from orders
 where cid not in (select cid
                   from orders
                   where aid = 'a08'
-                  ) cid_from_agent08
+                  ) 
 order by pid DESC;
 
 -- 6
@@ -50,8 +50,8 @@ where cid in (select cid
               where aid in (select aid
                             from agents
                             where city in ('Tokyo', 'New York')
-                            ) tokyo_or_newyork_agents
-              ) cid_from_agents;
+                            ) 
+              ); 
 -- 7
 select * 
 from customers
